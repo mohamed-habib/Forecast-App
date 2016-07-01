@@ -1,6 +1,239 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackgroundBorderless"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardUseCompatPadding="true">
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_normal">
+
+        <LinearLayout
+            android:id="@+id/card_item_header_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/margin_default">
+
+            <ImageView
+                android:id="@+id/card_item_icon_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/temperature_icon"
+                android:padding="@dimen/padding_normal"
+                android:src="@android:drawable/btn_star" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:layout_marginStart="@dimen/margin_large"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/card_item_title_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Monday"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+                <TextView
+                    android:id="@+id/card_item_date_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1/7/2016"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_default">
+
+            <TextView
+                android:id="@+id/card_item_temperature_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:layout_marginStart="@dimen/margin_large"
+                android:text="@string/celsius"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/temprature_text_size" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large">
+
+                <Button
+                    android:id="@+id/card_item_share_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:text="Share" />
+
+                <ImageButton
+                    android:id="@+id/card_item_arrow_down_ib"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:padding="@dimen/margin_large"
+                    android:src="@mipmap/arrow_down" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/card_item_details_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_default"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/card_item_desc_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_normal"
+                android:text="Sunny. High 36C. Winds WNW at 15 to 30 km/h."
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+            <LinearLayout
+                android:id="@+id/card_item_humidity_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/card_item_desc_tv"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/card_item_humidity_ic_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/humidity_icon"
+                    android:padding="@dimen/margin_large"
+                    android:src="@mipmap/humidity" />
+
+                <TextView
+                    android:id="@+id/card_item_humidity_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_normal"
+                    android:text="39" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/card_item_humidity_ll">
+
+                <ImageView
+                    android:id="@+id/card_item_wind_ic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@string/wind_icon"
+                    android:padding="@dimen/margin_large"
+                    android:src="@mipmap/wind_ic" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/card_item_wind_ic"
+                    android:layout_toRightOf="@+id/card_item_wind_ic">
+
+                    <LinearLayout
+                        android:id="@+id/card_item_max_wind_ll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/card_item_wind_max_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/padding_normal"
+                            android:text="Max"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/card_item_wind_max_value_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/padding_normal"
+                            android:text=" 20 km/h" />
+
+                        <TextView
+                            android:id="@+id/card_item_wind_max_dir_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/padding_normal"
+                            android:text="Dir: NNW" />
+
+                        <TextView
+                            android:id="@+id/card_item_wind_max_degree_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/padding_normal"
+                            android:text="338 degree" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/card_item_max_wind_ll"
+                        android:layout_toRightOf="@+id/card_item_max_wind_ll"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/card_item_wind_avg_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/padding_normal"
+                            android:text="Avg"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/card_item_wind_avg_value_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/padding_normal"
+                            android:text="15 km/h" />
+
+                        <TextView
+                            android:id="@+id/card_item_wind_avg_dir_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/padding_normal"
+                            android:text="Dir: NNW" />
+
+                        <TextView
+                            android:id="@+id/card_item_wind_avg_degree_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/padding_normal"
+                            android:text="338 degree" />
+
+                    </LinearLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

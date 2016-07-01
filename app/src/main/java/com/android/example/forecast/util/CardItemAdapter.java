@@ -23,7 +23,7 @@ import butterknife.BindString;
 import butterknife.ButterKnife;
 
 /**
- * Created by Dell on 7/1/2016.
+ * Created by Mohamed Habib on 7/1/2016.
  */
 public class CardItemAdapter extends RecyclerView.Adapter<CardItemAdapter.CardViewHolder> {
     Context context;
@@ -37,16 +37,15 @@ public class CardItemAdapter extends RecyclerView.Adapter<CardItemAdapter.CardVi
     @Override
     public CardViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(context).inflate(R.layout.card_item, parent, false);
-        CardViewHolder cardViewHolder = new CardViewHolder(itemView);
-        return cardViewHolder;
+        return new CardViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(final CardViewHolder cardViewHolder, int position) {
 
-
         final CardItem cardItem = cardItems.get(position);
         final String cardItemTemperature = cardItem.getTemp(cardViewHolder.celsiusUnit, cardViewHolder.fahrenheitUnit);
+        //use picasso to download the icon from the url and attach it to the imageView
         Picasso.with(context).load(cardItem.getIconUrl()).into(cardViewHolder.cardIconIV);
         cardViewHolder.cardTitleTV.setText(cardItem.getTitle());
         cardViewHolder.cardDateTV.setText(cardItem.getDate());
@@ -62,6 +61,7 @@ public class CardItemAdapter extends RecyclerView.Adapter<CardItemAdapter.CardVi
             }
         });
 
+        //show/hide card details with arrow
         cardViewHolder.arrowIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,17 +89,6 @@ public class CardItemAdapter extends RecyclerView.Adapter<CardItemAdapter.CardVi
     @Override
     public int getItemCount() {
         return cardItems.size();
-    }
-
-    public void clear() {
-        this.cardItems.clear();
-        notifyDataSetChanged();
-    }
-
-    public void addAll(List<CardItem> cardItems) {
-        cardItems.addAll(this.cardItems);
-        notifyDataSetChanged();
-
     }
 
     class CardViewHolder extends RecyclerView.ViewHolder {
