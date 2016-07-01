@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Weather Forecast</string>
+    <string name="celsius">50\u2103</string>
+    <string name="celsius_unit">\u2103</string>
+    <string name="fahrenheit_unit">\u2109</string>
+    <string name="view_grid_menu_item_str">Multi-column View</string>
+    <string name="view_list_menu_item_str">Single-column View</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+    <string name="temperature_icon">temperature icon</string>
+    <string name="humidity_icon">Humidity icon</string>
+    <string name="wind_icon">Wind icon</string>
+</resources>
