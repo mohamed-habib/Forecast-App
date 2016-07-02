@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="@dimen/margin_default">
+            android:padding="@dimen/margin_small">
 
             <ImageView
                 android:id="@+id/card_item_icon_iv"
@@ -57,18 +57,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="@dimen/margin_default">
+            android:padding="@dimen/margin_small">
 
             <TextView
                 android:id="@+id/card_item_temperature_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_large"
-                android:layout_marginStart="@dimen/margin_large"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginStart="@dimen/margin_small"
                 android:text="@string/celsius"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@color/colorAccent"
-                android:textSize="@dimen/temprature_text_size" />
+                android:textSize="@dimen/temperature_text_size" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -90,7 +90,7 @@
                     android:layout_alignParentRight="true"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:foreground="?attr/selectableItemBackground"
-                    android:padding="@dimen/margin_large"
+                    android:padding="@dimen/margin_small"
                     android:src="@mipmap/arrow_down" />
 
             </RelativeLayout>
@@ -101,7 +101,7 @@
             android:id="@+id/card_item_details_rl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="@dimen/margin_default"
+            android:padding="@dimen/margin_small"
             android:visibility="gone">
 
             <TextView
@@ -125,7 +125,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/humidity_icon"
-                    android:padding="@dimen/margin_large"
+                    android:padding="@dimen/padding_normal"
                     android:src="@mipmap/humidity" />
 
                 <TextView
@@ -147,7 +147,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:contentDescription="@string/wind_icon"
-                    android:padding="@dimen/margin_large"
+                    android:padding="@dimen/padding_normal"
                     android:src="@mipmap/wind_ic" />
 
                 <RelativeLayout
