@@ -171,8 +171,8 @@ public class MainActivity extends AppCompatActivity {
         } else {
             //if local db contains items, then add them to recycler view, else, tell the user that i need internet connection
             List<CardItem> cashedCardItems = cardItemTableOperations.getAllCardItems();
-            if (cashedCardItems.size() < 0) {
-                Snackbar.make(rootView, "Check Internet Connection", Snackbar.LENGTH_LONG).setAction("Retry", new View.OnClickListener() {
+            if (cashedCardItems.size() < 1) {
+                Snackbar.make(rootView, "Check Internet Connection", Snackbar.LENGTH_INDEFINITE).setAction("Retry", new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         sendForecastRequest();
